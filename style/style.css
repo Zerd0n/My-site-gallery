@@ -1,0 +1,397 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+   
+        .starfield {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .starfield::before,
+        .starfield::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 2px;
+            height: 2px;
+            background: transparent;
+            border-radius: 50%;
+        }
+
+        .starfield::before {
+            box-shadow: 
+                120px 80px 0 0.5px rgba(255, 255, 255, 0.3),
+                340px 150px 0 0.5px rgba(255, 255, 255, 0.25),
+                580px 220px 0 0.5px rgba(255, 255, 255, 0.35),
+                820px 90px 0 0.5px rgba(255, 255, 255, 0.28),
+                1020px 340px 0 0.5px rgba(255, 255, 255, 0.32),
+                1220px 180px 0 0.5px rgba(255, 255, 255, 0.27),
+                240px 420px 0 0.5px rgba(255, 255, 255, 0.3),
+                640px 520px 0 0.5px rgba(255, 255, 255, 0.25),
+                940px 600px 0 0.5px rgba(255, 255, 255, 0.33),
+                1340px 480px 0 0.5px rgba(255, 255, 255, 0.29),
+                180px 720px 0 0.5px rgba(255, 255, 255, 0.31),
+                480px 840px 0 0.5px rgba(255, 255, 255, 0.26),
+                780px 920px 0 0.5px rgba(255, 255, 255, 0.34),
+                1180px 780px 0 0.5px rgba(255, 255, 255, 0.28),
+                420px 260px 0 0.5px rgba(255, 255, 255, 0.3),
+                720px 360px 0 0.5px rgba(255, 255, 255, 0.27),
+                1420px 620px 0 0.5px rgba(255, 255, 255, 0.32),
+                280px 960px 0 0.5px rgba(255, 255, 255, 0.25),
+                1520px 120px 0 0.5px rgba(255, 255, 255, 0.35),
+                860px 440px 0 0.5px rgba(255, 255, 255, 0.29);
+            animation: twinkle 4s infinite ease-in-out;
+        }
+
+        .starfield::after {
+            box-shadow: 
+                220px 120px 0 1px rgba(255, 255, 255, 0.4),
+                520px 280px 0 1px rgba(255, 255, 255, 0.35),
+                920px 180px 0 1px rgba(255, 255, 255, 0.42),
+                1120px 420px 0 1px rgba(255, 255, 255, 0.37),
+                140px 580px 0 1px rgba(255, 255, 255, 0.39),
+                540px 680px 0 1px rgba(255, 255, 255, 0.36),
+                840px 780px 0 1px rgba(255, 255, 255, 0.41),
+                1240px 580px 0 1px rgba(255, 255, 255, 0.38),
+                380px 880px 0 1px rgba(255, 255, 255, 0.4),
+                1380px 240px 0 1px rgba(255, 255, 255, 0.35),
+                680px 140px 0 1px rgba(255, 255, 255, 0.43),
+                1480px 720px 0 1px rgba(255, 255, 255, 0.37),
+                80px 340px 0 1px rgba(255, 255, 255, 0.39),
+                1580px 880px 0 1px rgba(255, 255, 255, 0.36),
+                460px 540px 0 1px rgba(255, 255, 255, 0.41);
+            animation: twinkle 6s infinite ease-in-out 2s;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        /*Ну база*/
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 2.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        .menu-button {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #6479ff;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(100, 121, 255, 0.3);
+        }
+
+        .menu-button:hover {
+            background-color: #7a8dff;
+            box-shadow: 0 0 30px rgba(100, 121, 255, 0.5);
+            transform: scale(1.05);
+        }
+
+        /*Немного инфы*/
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 8rem 5% 6rem;
+            z-index: 1;
+        }
+
+        .hero-image-container {
+            width: 100%;
+            max-width: 900px;
+            margin-bottom: 3rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            opacity: 0.95;
+        }
+
+        .hero-content {
+            width: 100%;
+            align-self: flex-start;
+            padding-left: 5%;
+        }
+
+        .hero-name {
+            font-size: 4.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .hero-titles {
+            font-size: 1.4rem;
+            font-weight: 300;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.75);
+            letter-spacing: 0.08em;
+        }
+
+        /* Пустота */
+        .spacer {
+            height: 52vh;
+        }
+
+        /* Галерея */
+        .gallery-section {
+            position: relative;
+            z-index: 1;
+            padding: 4rem 5% 8rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .gallery-container {
+            width: 100%;
+       
+        }
+
+        .gallery-title {
+            margin-left: 90px;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            width: 100%;
+        }
+
+        .gallery-card {
+            aspect-ratio: 3 / 2;
+            border: 1px solid rgba(100, 121, 255, 0.3);
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, rgba(40, 40, 60, 0.2), rgba(20, 20, 40, 0.2));
+            position: relative;
+        }
+        .gallery-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.6;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .gallery-card:hover {
+            border-color: rgba(100, 121, 255, 0.7);
+            box-shadow: 0 10px 40px rgba(100, 121, 255, 0.25);
+            transform: translateY(-5px);
+        }
+
+        .gallery-card:hover::before {
+            transform: scale(1.05);
+            opacity: 0.85;
+        }
+
+        /* увеличение */
+   
+        #lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox-image {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            font-size: 50px;
+            color: white;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            font-weight: 300;
+            line-height: 1;
+        }
+
+        .lightbox-close:hover {
+            transform: rotate(90deg);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 60px;
+            color: white;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 20px;
+            transition: all 0.2s ease;
+            font-weight: 300;
+            line-height: 1;
+        }
+
+        .lightbox-nav:hover {
+            color: #6479ff;
+            transform: translateY(-50%) scale(1.2);
+        }
+
+        .lightbox-prev {
+            left: 20px;
+        }
+
+        .lightbox-next {
+            right: 20px;
+        }
+
+        body.no-scroll {
+            overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            .lightbox-close {
+                top: -40px;
+                font-size: 40px;
+            }
+            
+            .lightbox-nav {
+                font-size: 40px;
+                padding: 10px;
+            }
+        }
+
+       
+        @media (max-width: 768px) {
+            header {
+                padding: 1.5rem 6%;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            .menu-button {
+                width: 45px;
+                height: 45px;
+            }
+
+            .hero {
+                padding: 7rem 6% 4rem;
+            }
+
+            .hero-name {
+                font-size: 2.8rem;
+            }
+
+            .hero-titles {
+                font-size: 1.2rem;
+            }
+
+            .spacer {
+                height: 6vh;
+            }
+
+            .gallery-section {
+                padding: 3rem 6% 5rem;
+            }
+
+            .gallery-title {
+                font-size: 2.2rem;
+                margin-bottom: 2.5rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            
+        }
+
+        body.no-scroll {
+            overflow: hidden;
+        }
+      

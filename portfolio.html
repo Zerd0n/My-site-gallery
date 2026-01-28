@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZRDN</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+    
+    </style>
+</head>
+<body>
+    <div class="starfield"></div>
+
+    <header>
+        <div class="logo">ZRDN</div>
+        <button class="menu-button" aria-label="Menu"></button>
+    </header>
+
+    <main>
+ 
+        <section class="hero">
+            <div class="hero-image-container">
+                <img src="./img/hole.png" alt="Black hole illustration" class="hero-image">
+            </div>
+            <div class="hero-content">
+                <h1 class="hero-name">Zerdon</h1>
+                <div class="hero-titles">
+                    <div>Веб разработчик</div>
+                    <div>Художник</div>
+                </div>
+            </div>
+        </section>
+
+        <div class="spacer"></div>
+
+        <section class="gallery-section">
+            <div class="gallery-container">
+                <h2 class="gallery-title">Мои арты</h2>
+                <div class="gallery-grid">
+
+                   <div class="gallery-card" data-index="0">
+                        <img src="./img/1.png" alt="Gallery Image 1">
+                         <div class="loading-shimmer"></div>
+                    </div>
+
+                    <div class="gallery-card" data-index="1">
+                        <img src="./img/2.png" alt="Gallery Image 2">
+                         <div class="loading-shimmer"></div>
+                    </div>
+
+                    <div class="gallery-card" data-index="2">
+                        <img src="./img/3.png" alt="Gallery Image 3">
+                         <div class="loading-shimmer"></div>
+                    </div>
+
+                    <div class="gallery-card" data-index="3">
+                        <img src="./img/4.png" alt="Gallery Image 4">
+                         <div class="loading-shimmer"></div>
+                    </div>
+
+                    <div class="gallery-card" data-index="4">
+                        <img src="./img/5.png" alt="Gallery Image 5">
+                         <div class="loading-shimmer"></div>
+                    </div>
+
+                    <div class="gallery-card" data-index="5">
+                        <img src="./img/6.png" alt="Gallery Image 6">
+                         <div class="loading-shimmer"></div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+ 
+    <div id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightboxClose">&times;</button>
+            <button class="lightbox-nav lightbox-prev" id="lightboxPrev">‹</button>
+            <img src="" alt="Artwork" class="lightbox-image" id="lightboxImage">
+            <button class="lightbox-nav lightbox-next" id="lightboxNext">›</button>
+        </div>
+    </div>
+
+
+    <script src="./style/main.js"></script>
+</body>
+</html>
